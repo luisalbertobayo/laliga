@@ -1,7 +1,7 @@
 # laliga
-Repositorio sobre datos históricos de las plantillas de los equipos de la primera división de la liga profesional de fútbol española.
+Repositorio sobre los datos de la temporada 2017-2018 de las plantillas de los equipos de la segunda división de la liga profesional de fútbol española.
 
-Desde la temporada 1929-1930 hasta la temporada 2017-2018, con el impás de los años 1937, 1938 y 1939, recoge las estadísticas de cada jugador por cada club. Los datos almacenados son:
+Recoge las estadísticas de cada jugador por cada club. Los datos almacenados son:
 
 - Partidos jugados (P.Jug.).
 - Partidos completados (P.Compl.).
@@ -11,7 +11,13 @@ Desde la temporada 1929-1930 hasta la temporada 2017-2018, con el impás de los 
 - Tarjetas (Tarj.).
 - Expulsiones (Expul.).
 - Goles (Goles).
-- Penalti (Penalti).
+- Penaltis (Penalti).
 
-Dicha información se extrae de la web: https://www.laliga.es/estadisticas-historicas/plantillas/primera/,
-fuente fidedigna que proporciona esta información deseada, a
+Dicha información se extrae de la web: https://www.laliga.es/estadisticas-historicas/plantillas/segunda/,
+fuente fidedigna que proporciona esta información deseada.
+
+Somos un equipo de fútbol que tiene como objetivo reforzar la plantilla del primer equipo.
+
+El principal objetivo radica en analizar los datos de todos los jugadores de segunda división en la temporada pasada para así poder tomar decisión de posibles fichajes para nuestro equipo.
+
+Con los datos obtenidos a su vez se pueden obtener gráficas que representen qué o cúales jugadores son más idóneos para nuestro equipo según el objetivo fijado.
