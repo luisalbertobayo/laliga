@@ -40,7 +40,7 @@ De esta manera, el código accede directamente a la temporada a estudio, 2017 - 
 
 
 6
-El propietario de los datos es **Liga de Fútbol Profesional** con sede en _Calle Torrelaguna 60, Madrid_, teléfono 912 055 000, email _prensa@laliga.es_ y _webmaster@laliga.es_. Su actual presidente es Javier Tebas (@tebasjavier).
+El propietario de los datos es **Liga de Fútbol Profesional** con sede en _Calle Torrelaguna 60, Madrid_, teléfono _912 055 000_, email _prensa@laliga.es_ y _webmaster@laliga.es_. Su actual presidente es Javier Tebas (@tebasjavier).
 Agradecimientos a los árbitros por cumplimentar las actas arbitrales y a LaLiga por hacer públicos y permitir acceder a ellos.
 
 
