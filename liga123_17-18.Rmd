@@ -1,0 +1,81 @@
+---
+title: "liga123_17-18"
+author: "Luis Alberto Bayo y Miguel Ángel Bermejo Águeda"
+date: "9 de abril de 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r webscraping code, include=FALSE, warning=FALSE}
+
+# Se incluye la librería rvest para poder hacer uso de las funciones que incorpora para las tareas de scraping. Esta librería ayuda además a responder a páginas web que declaran codificaciones incorrectas.
+library(rvest)
+
+# Se almacena en la variable teams, el nombre de los 22 equipos de la segunda división, de los cúales se pretende obtener los datos. Estos valores cocinciden con el nombre que se le da a cada uno de los equipos en el path de la url que muestras sus respectivos datos. 
+
+teams <- c("alcorcon", "albacete", "osasuna", "lugo", "numancia", "tenerife", "reus-deportiu","gimnastic", "cultural-leonesa", "cadiz", "cordoba", "barcelona-b", "granada", "lorca", "rayo", "oviedo", "sporting", "valladolid", "zaragoza", "huesca", "sevilla-atletico", "almeria")
+
+# A continuación se inicializa el dataframe con el que se va a trabajar.
+finaldata <- data.frame()
+
+# Se almacena en "urlcabecera" la ruta principal dónde se pretende realizar el proceso de scraping.
+urlcabecera <- read_html("https://www.laliga.es/estadisticas-historicas/plantillas/segunda/2017-18/")
+
+# Con la siguiente sentencia recogemos un array con el nombre del encabezado de la tabla que se corresponde con la cabecera que se pretende tener en el dataset. Estos valores se ubican con elementos "th" dentro del código HTML. Se almacena por tanto las cadenas de texto de esos elementos en "col_name"  
+col_name <- urlcabecera %>% html_nodes("th") %>% html_text()
+
+
+# El siguinte código se va a ejecutar para todos los valores de "teams", para poder obtener los datos de cada uno de los equipos.
+
+for (i in 1:length(teams)) {
+  
+  # url va a tomar la ruta de la web para cada uno de los equipos.
+  url <- read_html(paste("https://www.laliga.es/estadisticas-historicas/plantillas/segunda/2017-18/", teams[i], sep=""))
+  
+  # Se obtienen los datos de los jugadores, estos valores están etiquetados como elementos "td" en el código HTML de la web.
+  mydata <- url %>% html_nodes("td") %>% html_text()
+  
+  # Condición para la primera vez que se recorra el bucle FOR
+  if (i == 1)  {
+   
+    # Se convierte mydata en un dataframe con 10 columnas (concidiendo con los datos que proceden de la web).
+    finaldata <- data.frame(matrix(mydata, ncol=10, byrow=TRUE))
+    
+    # Se le asignan al dataset los valores de la cabecera, obtenidos con anteridad.
+    names(finaldata) <- col_name
+    
+    #Incluimos la columna equipo poniendole el nombre del equipo que estamos recorriendo ("teams[i]").
+    finaldata ["Equipo"] <- teams[i]
+    
+  }
+  
+  else {
+    
+    # Se crea un nuevo dataframe temporal que va a ir almacenando los datos de los equipos según se vaya recorriendo el bucle.
+    finaldatatemporal <- data.frame(matrix(mydata, ncol=10, byrow=TRUE))
+    names(finaldatatemporal) <- col_name
+    
+    # Se incluye el nombre del equipo en la columna "Equipo" del dataframe.
+    finaldatatemporal$Equipo <- teams[i]
+    
+    # Por último se unen sucesivamente todos los datasets para conformar el dataframe final.
+    finaldata <- rbind(finaldata, finaldatatemporal)
+    
+  }
+  
+  
+}
+
+# Borrado de las comas que aparecen en algunos nombres de jugadores, para que el fichero CSV no se vea afectado por ello.
+finaldata$Jugador <- gsub(",",".",finaldata$Jugador)
+    
+# Finalmente se genera un fichero CSV con los datos obtenidos.
+write.csv(finaldata, file = "liga123_17-18.csv", row.names=FALSE)
+
+
+```
+
