@@ -1,11 +1,30 @@
 # LaLiga123 (2ª división de la liga profesional de fútbol de España)
 
-El trabajo realizado correponde al equipo de scouting de un equipo de la primer división de la liga profesional de fútbol de España
-que en base a otros informes de jugadores, desae tener unas estadísticas generales de todos los jugadores de ka segunda división de la liga profesional de fútbol de España para planificar la temporada 2018 - 2019 (ahora temporada en curso).
+El trabajo realizado correponde al equipo de scouting de un equipo de la primer división de la liga profesional de fútbol de España, que en base a otros informes de jugadores, desae tener unas estadísticas generales de todos los jugadores de la segunda división de la liga profesional de fútbol de España para planificar la temporada 2018 - 2019 (ahora temporada en curso).
 
-Para obtener estos datos, se ha recurrido a los datos históricos de LaLiga:
-https://www.laliga.es/estadisticas-historicas/plantillas/segunda/
-pues es el organismo que regula el fútbol profesional en España y por ello son los más fidedignos pues se basan en los datos oficiales recogidos en las actas arbitrales.
+Para obtener estos datos, se ha recurrido a los datos históricos de LaLiga, en su web:
+https://www.laliga.es/estadisticas-historicas/plantillas/segunda/2017-18/
+pues es el organismo que regula el fútbol profesional en España y, por ello, es la información más fidedigna al recoger estos datos oficiales de las actas arbitrales.
+
+
+El nombre del dataset donde que recopila los datos es _LaLiga123_17-18_stats_.
+
+
+El dataset generado por el código implementado se guarda en un _.csv_ donde las estadísticas recogidas por cada jugador hacen referencia a:
+
+- Partidos jugados (_P.Jug._).
+- Partidos completados (_P.Compl._).
+- Partidos titular (_P.Tit._).
+- Partidos sustituidos (_P.Sust._).
+- Minutos (_Min_).
+- Tarjetas (_Tarj._).
+- Expulsiones (_Expul._).
+- Goles marcados (_Goles_).
+- Penaltis transformados (_Penalti_).
+- Equipo (_Equipo_).
+
+
+
 
 Repositorio sobre los datos de la temporada 2017-2018 de las plantillas de los equipos de la segunda división de la liga profesional de fútbol española.
 
