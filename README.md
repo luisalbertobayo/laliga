@@ -35,16 +35,17 @@ Los atributos reflejados en el dataset corresponden a datos de las siguientes co
 - Penaltis transformados (_Penalti_).
 - Equipo (_Equipo_).
 
-Estos datos han sido generados a partir de la información que ha reflejado cada árbitro a la conclusión de cada partido en el acta arbitral.
+Estos datos han sido generados a partir de la información que ha reflejado cada árbitro a la conclusión de cada partido en el acta arbitral. Posteriormente, LaLiga los ha hecho públicos en su web, filtrando por liga, temporada y equipo.
+De esta manera, el código accede directamente a la temporada a estudio, 2017 - 2018, y es capaz de generar el filtrado de todos los equipos que han participado en ella, para acceder a los datos mostrados de cada equipo y almacenarlos en una única tabla dataset, pues lo que interesa es el análisis por jugador.
 
 
 6
 El propietario de los datos es **Liga de Fútbol Profesional** con sede en _Calle Torrelaguna 60, Madrid_, teléfono 912 055 000, email _prensa@laliga.es_ y _webmaster@laliga.es_. Su actual presidente es Javier Tebas (@tebasjavier).
-Agradecimientos a los árbitros por cumplimnetar las actas arbitrales y a LaLiga por hacer públicos y permitir acceder a ellos.
+Agradecimientos a los árbitros por cumplimentar las actas arbitrales y a LaLiga por hacer públicos y permitir acceder a ellos.
 
 
 7
-El proposito de la recopilación de estos datos es conocer qué jugadores has destacado durante la temporada 2017 - 2018, en base a las estadísticas recogidas que facilitan el _scouting_ para el equipo de fútbol implicado.
+El propósito de la recopilación de estos datos es conocer qué jugadores has destacado durante la temporada 2017 - 2018, en base a las estadísticas recogidas que facilitan el _scouting_ para el equipo de fútbol implicado.
 
 - Máximos goleadores.
 - Ratio goles por partido.
@@ -52,11 +53,3 @@ El proposito de la recopilación de estos datos es conocer qué jugadores has de
 - Jugadores más amonestados.
 - Jugadores con más minutos jugados.
 - Partidos totales completados.
-
-
-
-
-
-
-
-
