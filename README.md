@@ -1,4 +1,4 @@
-#### LaLiga123 (scouting a la 2ª división de la liga profesional de fútbol de España, temporada 2017 - 2018)
+### LaLiga123 (scouting a la 2ª división de la liga profesional de fútbol de España, temporada 2017 - 2018)
 
 1
 El trabajo realizado correponde al equipo de _scouting_ de un equipo de la primera división de la liga profesional de fútbol de España, que desea tener unas estadísticas generales de todos los jugadores de la segunda división de la liga profesional de fútbol para planificar la temporada 2018 - 2019 (ahora temporada en curso).
