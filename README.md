@@ -18,6 +18,6 @@ fuente fidedigna que proporciona esta información deseada.
 
 Somos un equipo de fútbol que tiene como objetivo reforzar la plantilla del primer equipo.
 
-El principal objetivo radica en analizar los datos de todos los jugadores de segunda división en la temporada pasada para así poder tomar decisión de posibles fichajes para nuestro equipo.
+El principal objetivo radica en analizar los datos de todos los jugadores de segunda división en la temporada pasada para así poder tomar la decisión o no de incorporar algún nuevo jugador a nuestro equipo.
 
 Con los datos obtenidos a su vez se pueden obtener gráficas que representen qué o cúales jugadores son más idóneos para nuestro equipo según el objetivo fijado.
