@@ -1,4 +1,12 @@
-# laliga
+# LaLiga123 (2ª división de la liga profesional de fútbol de España)
+
+El trabajo realizado correponde al equipo de scouting de un equipo de la primer división de la liga profesional de fútbol de España
+que en base a otros informes de jugadores, desae tener unas estadísticas generales de todos los jugadores de ka segunda división de la liga profesional de fútbol de España para planificar la temporada 2018 - 2019 (ahora temporada en curso).
+
+Para obtener estos datos, se ha recurrido a los datos históricos de LaLiga:
+https://www.laliga.es/estadisticas-historicas/plantillas/segunda/
+pues es el organismo que regula el fútbol profesional en España y por ello son los más fidedignos pues se basan en los datos oficiales recogidos en las actas arbitrales.
+
 Repositorio sobre los datos de la temporada 2017-2018 de las plantillas de los equipos de la segunda división de la liga profesional de fútbol española.
 
 Recoge las estadísticas de cada jugador por cada club. Los datos almacenados son:
