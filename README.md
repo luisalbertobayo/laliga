@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Esta práctica se ha realizado bajo el contexto de la asignatura _Tipología y ciclo de vida de los datos_, perteneciente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya. En ella, se aplican técnicas de _web scraping_ mediante el lenguaje de programación Python para extraer así datos de la web _PlaneCrashInfo_ y generar un _dataset_.
+Práctica _PRAC 1_ perteneciente a la asignatura _Tipología y ciclo de vida de los datos_ del Máster en _Ciencia de Datos_ de la **Universitat Oberta de Catalunya**, donde se aplican técnicas de _web scraping_ mediante el lenguaje de programación R, con el fin de extraer datos de la web _LaLiga_ y generar un dataset _LaLiga123_17-18_stats_.
 
 
 ## Miembros del equipo
