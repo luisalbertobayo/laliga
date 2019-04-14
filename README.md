@@ -10,11 +10,14 @@ Esta práctica se ha realizado bajo el contexto de la asignatura _Tipología y c
 La actividad ha sido realizada por **Luis Alberto Bayo** y **Miguel Ángel Bermejo Águeda**.
 
 
-## Ficheros del código fuente
+## Archivo código fuente
 
-* **src/main.py**: punto de entrada al programa. Inicia el proceso de scraping.
-* **src/scraper.py**: código que genera el conjunto de datos **LaLiga123_17-18_stats** a partir de la base de datos online [LaLiga123](https://www.laliga.es/estadisticas-historicas/plantillas/segunda/2017-18/).
-* **src/reason_classifier.py**: contiene la implementación de la clase que se encarga de asignar una causa a un resumen de accidente dado. Para ello, utiliza la librería *TextBlob*.
+* **LaLiga123_17-18_stats.Rmd**: código que genera el conjunto de datos **LaLiga123_17-18_stats** a partir de la base de datos online [LaLiga123](https://www.laliga.es/estadisticas-historicas/plantillas/segunda/2017-18/).
+
+
+## Archivo código fuente
+
+* **PRAC 1.pdf**: fichero que recoge la contestación a las preguntas de la _PRAC 1_.
 
 
 ## Recursos
