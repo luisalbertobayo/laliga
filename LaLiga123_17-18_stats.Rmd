@@ -1,7 +1,7 @@
 ---
 title: "LaLiga123_17-18_stats"
-author: "Luis Alberto Bayo y Miguel 羘gel Bermejo 羐ueda"
-date: "9 de abril de 2019"
+author: "Luis Alberto Bayo y Miguel 脕ngel Bermejo 脕gueda"
+date: "15 de abril de 2019"
 output: html_document
 ---
 
@@ -12,57 +12,56 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r webscraping code, include=FALSE, warning=FALSE}
 
-# Se incluye la librer韆 rvest para poder hacer uso de las funciones que incorpora para las tareas de scraping. Esta librer韆 ayuda adem醩 a responder a p醙inas web que declaran codificaciones incorrectas.
+# Se incluye la librer铆a 'rvest' para poder hacer uso de las funciones que incorpora para las tareas de scraping. Esta librer铆a ayuda adem谩s a responder a p谩ginas web que declaran codificaciones incorrectas.
+#install.packages('rvest')
 library(rvest)
 
-# Se almacena en la variable teams, el nombre de los 22 equipos de la segunda divisi髇, de los c鷄les se pretende obtener los datos. Estos valores cocinciden con el nombre que se le da a cada uno de los equipos en el path de la url que muestras sus respectivos datos. 
-
+# Se almacena en la variable 'teams' el nombre de los 22 equipos que componen la segunda divisi贸n de f煤tbol, de los se pretende obtener los datos. Estos atributos se hacen coincidir con el nombre que tiene cada uno de los equipos en el path de la url que muestra sus respectivos datos.
 teams <- c("alcorcon", "albacete", "osasuna", "lugo", "numancia", "tenerife", "reus-deportiu","gimnastic", "cultural-leonesa", "cadiz", "cordoba", "barcelona-b", "granada", "lorca", "rayo", "oviedo", "sporting", "valladolid", "zaragoza", "huesca", "sevilla-atletico", "almeria")
 
-# A continuaci髇 se inicializa el dataframe con el que se va a trabajar.
+# Inicializaci贸n  del dataframe con el que se va a trabajar.
 finaldata <- data.frame()
 
-# Se almacena en "urlcabecera" la ruta principal d髇de se pretende realizar el proceso de scraping.
+# Se almacena en 'urlcabecera' la ruta com煤n d贸nde se realiza el proceso de web scraping.
 urlcabecera <- read_html("https://www.laliga.es/estadisticas-historicas/plantillas/segunda/2017-18/")
 
-# Con la siguiente sentencia recogemos un array con el nombre del encabezado de la tabla que se corresponde con la cabecera que se pretende tener en el dataset. Estos valores se ubican con elementos "th" dentro del c骴igo HTML. Se almacena por tanto las cadenas de texto de esos elementos en "col_name"  
+# Instrucci贸n que recoge en un array el nombre de los atributos de la tabla que da forma al dataset que se quiere generar. Estos atributos se ubican con elementos "th" dentro del c贸digo HTML. Se almacena por tanto, las cadenas de texto de esos elementos en 'col_name'.  
 col_name <- urlcabecera %>% html_nodes("th") %>% html_text()
 
-
-# El siguinte c骴igo se va a ejecutar para todos los valores de "teams", para poder obtener los datos de cada uno de los equipos.
-
+# Generaci贸n de una iteraci贸n para recorrer todos los valores de 'teams', es decir,  para poder obtener los datos de cada uno de los equipos a estudio.
 for (i in 1:length(teams)) {
-  
-  # url va a tomar la ruta de la web para cada uno de los equipos.
+  # url toma la ruta de la web propia de cada equipo.
   url <- read_html(paste("https://www.laliga.es/estadisticas-historicas/plantillas/segunda/2017-18/", teams[i], sep=""))
   
-  # Se obtienen los datos de los jugadores, estos valores est醤 etiquetados como elementos "td" en el c骴igo HTML de la web.
+  # Los datos deseados de cada jugador est谩n etiquetdos como elementos "td" en el c贸digo HTML de la web.
   mydata <- url %>% html_nodes("td") %>% html_text()
   
-  # Condici髇 para la primera vez que se recorra el bucle FOR
+  # Condici贸n para la primera vez que se recorra el bucle FOR
   if (i == 1)  {
    
-    # Se convierte mydata en un dataframe con 10 columnas (concidiendo con los datos que proceden de la web).
+    # 'finaldata' almacena en un dataframe de 10 columnas los valores obtenidos de los jugadores de un equipo almacenados en el array 'mydata'.
     finaldata <- data.frame(matrix(mydata, ncol=10, byrow=TRUE))
     
-    # Se le asignan al dataset los valores de la cabecera, obtenidos con anteridad.
+    # Se contruye la cabecera para el dataframe 'finaldata' con los valores anteriormente obtenidos y almacenados en 'col_name'.
     names(finaldata) <- col_name
     
-    #Incluimos la columna equipo poniendole el nombre del equipo que estamos recorriendo ("teams[i]").
+    # Se a帽ade una nueva columna 'Equipo' que distinga el equipo al que pertenece cada jugador encontrado.
     finaldata ["Equipo"] <- teams[i]
     
   }
   
   else {
     
-    # Se crea un nuevo dataframe temporal que va a ir almacenando los datos de los equipos seg鷑 se vaya recorriendo el bucle.
+    # Se crea un nuevo dataframe temporal 'finaldatatemporal' que almacena los datos de los equipos recorridos seg煤n se accede a la iteracci贸n
     finaldatatemporal <- data.frame(matrix(mydata, ncol=10, byrow=TRUE))
+  
+    # Al igual que para 'finaldata', se contruye la cabecera para el dataframe 'finaldatatemporal' con los valores anteriormente obtenidos y almacenados en 'col_name'.
     names(finaldatatemporal) <- col_name
     
-    # Se incluye el nombre del equipo en la columna "Equipo" del dataframe.
+    # Al igual que para 'finaldata', se a帽ade una nueva columna 'Equipo' que distinga el equipo al que pertenece cada jugador encontrado.
     finaldatatemporal$Equipo <- teams[i]
     
-    # Por 鷏timo se unen sucesivamente todos los datasets para conformar el dataframe final.
+    # Por 煤ltimo se unen sucesivamente todos los datasets para conformar el dataframe final.
     finaldata <- rbind(finaldata, finaldatatemporal)
     
   }
@@ -70,12 +69,11 @@ for (i in 1:length(teams)) {
   
 }
 
-# Borrado de las comas que aparecen en algunos nombres de jugadores, para que el fichero CSV no se vea afectado por ello.
+# Se realizada el borrad de las comas (",") que aparecen en algunos nombres de jugadores para que el fichero .CSV generado no se vea afectado por ello.
 finaldata$Jugador <- gsub(",",".",finaldata$Jugador)
     
-# Finalmente se genera un fichero CSV con los datos obtenidos.
+# Finalmente se genera el fichero .CSV 'LaLiga123_17-18_stats' con los datos obtenidos.
 write.csv(finaldata, file = "LaLiga123_17-18_stats.csv", row.names=FALSE)
 
 
 ```
-
