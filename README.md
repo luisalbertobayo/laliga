@@ -10,14 +10,10 @@ Esta práctica se ha realizado bajo el contexto de la asignatura _Tipología y c
 La actividad ha sido realizada por **Luis Alberto Bayo** y **Miguel Ángel Bermejo Águeda**.
 
 
-## Archivo código fuente
+## Ficheros
 
-* **LaLiga123_17-18_stats.Rmd**: código que genera el conjunto de datos **LaLiga123_17-18_stats** a partir de la base de datos online [LaLiga123](https://www.laliga.es/estadisticas-historicas/plantillas/segunda/2017-18/).
-
-
-## Archivo código fuente
-
-* **PRAC 1.pdf**: fichero que recoge la contestación a las preguntas de la _PRAC 1_.
+* **LaLiga123_17-18_stats.Rmd**: código fuente que genera el conjunto de datos **LaLiga123_17-18_stats** a partir de la base de datos online [LaLiga123](https://www.laliga.es/estadisticas-historicas/plantillas/segunda/2017-18/).
+* **PRAC 1.pdf**: archivo que recoge la contestación a las preguntas de la _PRAC 1_.
 
 
 ## Recursos
