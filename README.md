@@ -7,7 +7,7 @@ Práctica _PRAC 1_ perteneciente a la asignatura _Tipología y ciclo de vida de 
 
 ## Miembros del equipo
 
-Actividad realizada por **Luis Alberto Bayo** y **Miguel Ángel Bermejo Águeda**.
+Actividad realizada por **Luis Alberto Bayo (LAB)** y **Miguel Ángel Bermejo Águeda (MABA)**.
 
 
 ## Ficheros
